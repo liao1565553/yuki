@@ -89,6 +89,9 @@
 					</props>
 				</constructor-arg>
 			</bean>
+			
+			<!-- 配置shrio   -->
+			
 		</property>
 	</bean>
 
