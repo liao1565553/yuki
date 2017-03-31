@@ -14,12 +14,7 @@
 		<property name="filterChainDefinitions">
 			<value>
 				/login.html=anon
-				/user/login=anon
-				/captcha/getCaptchaImage= anon
-				/captcha/checkCaptcha= anon
-				/captcha/getCaptcha= anon
-				/captcha-image= anon
-				/lib/**=anon
+				/shiro/logout= logout
 				/WEB-INF/view/** = authc
 			</value>
 		</property>
@@ -32,6 +27,12 @@
 	</bean>
 	<!-- 配置进行授权和认证的 Realm -->
 	<bean id="myRealm" class="com.yuki.shiro.realms.ShiroRealm">
+		<property name="CredentialsMatcher">
+			<bean class="org.apache.shiro.authc.credential.HashedCredentialsMatcher">
+				<property name="hashAlgorithmName" value="MD5"></property>
+				<property name="hashIterations" value="3"></property>
+			</bean>
+		</property>
 	</bean>
 	<!-- 配置 Shiro 的 SecurityManager Bean. -->
 	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">

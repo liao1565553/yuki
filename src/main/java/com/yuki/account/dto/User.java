@@ -1,6 +1,14 @@
 package com.yuki.account.dto;
 
-public class User {
+public class User extends BaseDto{
+	
+	
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1531962007125555084L;
+
 	private String username;
 
 	private String password;

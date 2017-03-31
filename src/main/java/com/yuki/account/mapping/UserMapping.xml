@@ -6,4 +6,8 @@
 		username = #{username,jdbcType=VARCHAR} and password =
 		#{password,jdbcType=VARCHAR}
 	</select>
+	<select id="getUserByUsername" resultType="com.yuki.account.dto.User">
+		select username, password from user where
+		username = #{username,jdbcType=VARCHAR}
+	</select>
 </mapper>
