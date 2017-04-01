@@ -14,15 +14,15 @@ import org.apache.shiro.util.ByteSource;
 import com.yuki.account.dto.User;
 import com.yuki.account.service.UserService;
 
-public class ShiroRealm extends AuthenticatingRealm {
+public class SecondRealm extends AuthenticatingRealm {
 	@Resource
 	UserService userService;
 
 	@Override
 	protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
-		System.out.println("ShiroRealm");
+		System.out.println("SecondRealm");
 		System.out.println("doGetAuthenticationInfo:" + token);
-
+		
 		// 1.把AuthenticationToken转化为UsernamePasswordToken
 		UsernamePasswordToken upToken = (UsernamePasswordToken) token;
 
